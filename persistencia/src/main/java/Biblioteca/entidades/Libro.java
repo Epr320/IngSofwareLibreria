@@ -50,4 +50,13 @@ public class Libro implements Serializable {
         this.autor=autor;
 
     }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "isbn='" + isbn + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", descri='" + descri + '\'' +
+                '}';
+    }
 }

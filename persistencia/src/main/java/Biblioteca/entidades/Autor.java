@@ -29,4 +29,12 @@ public class Autor implements Serializable {
 
     @OneToMany(mappedBy = "autor")
     private List<Libro> libros;
+
+    @Override
+    public String toString() {
+        return "Autor{" +
+                "cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

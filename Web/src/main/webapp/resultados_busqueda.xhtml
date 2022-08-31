@@ -12,19 +12,7 @@
     <title>Página de Inicio</title>
 </h:head>
 <h:body>
-    <h1>Hola Mundo</h1>
-    <div id="contenido">
-        <h:form>
-            <div class="input-search ui-inputgroup">
-                <p:inputText placeholder="¿Qué Libro está buscando?"
-
-                             required="true" value="#{busquedaBean.busqueda}" />
-
-                <p:commandButton update="@form" icon="pi pi-search"
-                                 action="#{busquedaBean.buscar}" />
-
-            </div>
-        </h:form>
-    </div>
+    <h1>Resultado | Busqueda</h1>
+    <p>#{busquedaBean.libros}</p>
 </h:body>
 </html>
