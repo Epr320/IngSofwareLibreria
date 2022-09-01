@@ -21,7 +21,7 @@ public interface LibroRepo extends JpaRepository<Libro, String> {
     List<Libro> buscarPorAutor(String nombreAutor);
 
     @Query("select l from Libro l where upper(l.isbn) = :isbn")
-    List<Libro> buscarPorIsbn(String isbn);
+    Libro buscarPorIsbn(String isbn);
 
 
 }

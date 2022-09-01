@@ -28,7 +28,7 @@ public class LibroServicioImpl implements LibroServicio {
     }
 
     @Override
-    public List<Libro> buscarLibroPorIsbn(String nombre) throws Exception {
+    public Libro buscarLibroPorIsbn(String nombre) throws Exception {
         return libroRepo.buscarPorIsbn(nombre.toUpperCase());
     }
 }

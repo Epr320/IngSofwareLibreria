@@ -13,6 +13,50 @@
 </h:head>
 <h:body>
     <h1>Resultado | Busqueda</h1>
-    <p>#{busquedaBean.libros}</p>
+    <h:form id="form">
+        <p:dataView id="lista-libros" var="libro" value="#{busquedaBean.libros}"
+                    rows="12" paginator="true" gridIcon="pi pi-th-large" listIcon="pi
+
+pi-bars" >
+            <p:dataViewGridItem>
+                <div class="card" >
+                    <div class="card-body">
+                        <h5 class="card-title">#{libro.nombre}</h5>
+                        <p class="card-text">#{libro.autor.nombre}</p>
+                        <hr />
+                        <p:commandButton value="Ver detalle" styleClass="ui-button-raised"
+
+                                         icon="pi pi-arrow-right" iconPos="right" />
+
+                    </div>
+                </div>
+            </p:dataViewGridItem>
+            <p:dataViewListItem>
+                <div class="row d-flex" >
+                    <div class="col-lg-8 col-md-1 align-self-center" >
+                        <p:outputPanel>
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputText value="Nombre:" />
+                                <h:outputText value="#{libro.nombre}" style="font-weight:
+                                bold" />
+
+                                <h:outputText value="Autor:" />
+                                <h:outputText value="#{libro.autor.nombre}" />
+                                <h:outputText value="Isbn:" />
+                                <h:outputText value="#{libro.isbn}" />
+                                <h:outputText value="Descripción:" />
+                                <h:outputText value="#{libro.descri}" />
+                            </h:panelGrid>
+                        </p:outputPanel>
+                    </div>
+                    <div class="col-lg-2 col-md-1 align-self-center" >
+                        <p:commandButton value="Ver detalle" action="#{busquedaBean.irAlDetalle(libro.isbn)}"
+                                         styleClass="ui-button-raised" icon="pi pi-arrow-right" iconPos="right" />
+
+                    </div>
+                </div>
+            </p:dataViewListItem>
+        </p:dataView>
+    </h:form>
 </h:body>
 </html>

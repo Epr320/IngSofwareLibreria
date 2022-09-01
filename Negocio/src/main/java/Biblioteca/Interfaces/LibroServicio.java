@@ -10,6 +10,6 @@ public interface LibroServicio {
 
     List<Libro> buscarLibroPorNombre (String nombre) throws Exception;
     List<Libro> buscarLibroPorAutor (String nombre) throws Exception;
-    List<Libro> buscarLibroPorIsbn (String nombre) throws Exception;
+    Libro buscarLibroPorIsbn (String nombre) throws Exception;
 
 }

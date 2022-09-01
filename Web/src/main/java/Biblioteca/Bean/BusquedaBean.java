@@ -44,4 +44,8 @@ public class BusquedaBean implements Serializable {
          return "resultados_busqueda?faces-redirect=true&amp;busqueda="+busqueda;
 
     }
+    public String irAlDetalle(String id) {
+        return "/detalleLibro?faces-redirect=true&amp;hotel="+id;
+    }
+
 }
