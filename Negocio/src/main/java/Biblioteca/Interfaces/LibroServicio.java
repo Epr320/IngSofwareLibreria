@@ -1,5 +1,6 @@
 package Biblioteca.Interfaces;
 
+import Biblioteca.entidades.Calificacion;
 import Biblioteca.entidades.Libro;
 import org.springframework.stereotype.Component;
 
@@ -12,4 +13,5 @@ public interface LibroServicio {
     List<Libro> buscarLibroPorAutor (String nombre) throws Exception;
     Libro buscarLibroPorIsbn (String nombre) throws Exception;
 
+    List<Calificacion> buscarCalificacionLibro(String isbn) throws Exception;
 }

@@ -17,13 +17,8 @@ public class ReseñaServicioImpl implements ReseñaServicio {
     private LibroRepo libroRepo;
 
     @Override
-    public Reseña agregarReseña(String libroIsbn, String contenido) throws Exception {
+    public Reseña agregarReseña(Reseña resenia) throws Exception {
 
-        Reseña reseña = new Reseña();
-
-        reseña.setReseña(contenido);
-        reseña.setLibro(libroRepo.getById(libroIsbn));
-
-        return reseñaRepo.save(reseña);
+        return reseñaRepo.save(resenia);
     }
 }

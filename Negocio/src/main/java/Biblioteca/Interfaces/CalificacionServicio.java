@@ -6,5 +6,5 @@ import org.springframework.stereotype.Component;
 @Component
 public interface CalificacionServicio {
 
-    Calificacion agregarCalificacion (String libroIsbn, Integer calificacion) throws Exception;
+    Calificacion agregarCalificacion (Calificacion calificacion) throws Exception;
 }

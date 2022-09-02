@@ -17,21 +17,22 @@
     <p>#{detalleLibroBean.libro.isbn}</p>
     <p>#{detalleLibroBean.libro.autor.nombre}</p>
     <p>#{detalleLibroBean.libro.descri}</p>
+    <p>#{detalleLibroBean.promedio}</p>
     <div id="contenido">
         <p:panel header="Hacer un comentario" styleClass="mt-3" >
             <h:form id="crear-comentario">
                 <h:panelGrid columns="2" cellpadding="3">
-                    <p:inputTextarea value="#{detalleHotelBean.nuevoComentario.comentario}"
+                    <p:inputTextarea value="#{detalleLibroBean.resenia.reseña}"
                                      required="true" styleClass="comentario-usuario" />
-                    <p:rating value="#{detalleHotelBean.nuevoComentario.calificacion}" required="true"/>
+                    <p:rating value="#{detalleLibroBean.calificacion.calificacion}" required="true"/>
                 </h:panelGrid>
                 <p:commandButton value="Comentar" icon="pi pi-comment" iconPos="left" update="@form,
-                    lista-c" styleClass="mt-4" action="#{detalleHotelBean.crearComentario}" />
+                    lista-c" styleClass="mt-4" action="#{detalleLibroBean.crearComentario()}" />
                 <p:growl for="msj-pregunta" showDetail="true" />
             </h:form>
         </p:panel>
     <p:panel header="Hacer una resenia" styleClass="mt-3">
-        <p:dataList id="lista-c" value="#{detalleLibroBean.libro.reseñas}" var="com">
+        <p:dataList id="lista-c" value="#{detalleLibroBean.resenias}" var="com">
             <p>#{com.reseña}</p>
         </p:dataList>
     </p:panel>

@@ -1,6 +1,7 @@
 package Biblioteca.Servicios;
 
 import Biblioteca.Repositorios.LibroRepo;
+import Biblioteca.entidades.Calificacion;
 import Biblioteca.entidades.Libro;
 import Biblioteca.Interfaces.LibroServicio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,10 @@ public class LibroServicioImpl implements LibroServicio {
     @Override
     public Libro buscarLibroPorIsbn(String nombre) throws Exception {
         return libroRepo.buscarPorIsbn(nombre.toUpperCase());
+    }
+
+    @Override
+    public List<Calificacion> buscarCalificacionLibro(String isbn) throws Exception {
+        return libroRepo.buscarCalificacionLibro(isbn);
     }
 }

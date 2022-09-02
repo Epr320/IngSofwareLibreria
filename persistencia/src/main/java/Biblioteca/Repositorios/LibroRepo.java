@@ -1,6 +1,7 @@
 package Biblioteca.Repositorios;
 
 
+import Biblioteca.entidades.Calificacion;
 import Biblioteca.entidades.Libro;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -23,5 +24,7 @@ public interface LibroRepo extends JpaRepository<Libro, String> {
     @Query("select l from Libro l where upper(l.isbn) = :isbn")
     Libro buscarPorIsbn(String isbn);
 
+    @Query("select c from Libro l join Calificacion c on c.libro.isbn=l.isbn where upper(l.isbn) = :isbn")
+    List<Calificacion> buscarCalificacionLibro(String isbn);
 
 }

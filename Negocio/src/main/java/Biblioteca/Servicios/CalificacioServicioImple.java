@@ -20,12 +20,7 @@ public class CalificacioServicioImple implements CalificacionServicio {
 
 
     @Override
-    public Calificacion agregarCalificacion(String libroIsbn, Integer calificacion) throws Exception {
-
-
-        Calificacion calificacion1 = new Calificacion();
-        calificacion1.setCalificacion(calificacion);
-        calificacion1.setLibro(libroRepo.getById(libroIsbn));
-        return calificacionRepo.save(calificacion1);
+    public Calificacion agregarCalificacion(Calificacion calificacion) throws Exception {
+        return calificacionRepo.save(calificacion);
     }
 }

@@ -12,10 +12,10 @@
     <title>Página de Inicio</title>
 </h:head>
 <h:body>
-    <h1>Hola Mundo</h1>
+    <h1>Biblioteca</h1>
     <div id="contenido">
         <h:form>
-            <div class="input-search ui-inputgroup">
+            <div class="input-search ui-inputgroup"></div>
                 <p:inputText placeholder="¿Qué Libro está buscando?"
 
                              required="true" value="#{busquedaBean.busqueda}" />
@@ -23,8 +23,14 @@
                 <p:commandButton update="@form" icon="pi pi-search"
                                  action="#{busquedaBean.buscar}" />
 
-            </div>
+            <h5>Nombre del autor</h5>
+            <p:inputText value="#{busquedaBean.autor}"/>
+            <h5>isbn del libro</h5>
+            <p:inputText value="#{busquedaBean.isbn}"/>
+
+
         </h:form>
+
     </div>
 </h:body>
 </html>

@@ -5,5 +5,5 @@ import org.springframework.stereotype.Component;
 
 
 public interface ReseñaServicio {
-    Reseña agregarReseña (String libroIsbn, String contenido) throws Exception;
+    Reseña agregarReseña (Reseña reseña) throws Exception;
 }
